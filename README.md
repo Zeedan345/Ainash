@@ -1,0 +1,2 @@
+# Ainash
+AI Native Shell
