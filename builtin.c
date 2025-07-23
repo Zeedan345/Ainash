@@ -39,7 +39,7 @@ int	cellEcho(char **args)
 	{
 		printf("%s", args[i]);
 		if (args[i + 1])
-			p(" ");
+			printf(" ");
 	}
 
 	if (newline)

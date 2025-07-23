@@ -1,8 +1,8 @@
 #include "cell.h"
 
 t_builtin g_builtin[] = {
-    //{.builtin_names="echo", .foo=cell_echo};
-    //{.builtin_names="env", .foo=cell_env};
+    {.builtin_names="echo", .foo=cellEcho},
+    {.builtin_names="env", .foo=cellEnv},
     {.builtin_names="exit", .foo=CellExit},
     {.builtin_names=NULL}
 };
@@ -81,11 +81,12 @@ int main(int ac, char **av) {
 		args = cellSplitLine(line);	
 
         //check if cd
-		// if (args[0] && !strcmp(args[0], "cd"))
-		// 	Chdir(args[1]);
-
-        //execute
-		cellExec(args);
+		if (args[0] && !strcmp(args[0], "cd"))
+			Chdir(args[1]);
+        else {
+            //execute
+            cellExec(args);
+        }
 
 		//Clean🧹
 		free(line);
