@@ -6,6 +6,15 @@ t_builtin g_builtin[] = {
     {.builtin_names="exit", .foo=CellExit},
     {.builtin_names=NULL}
 };
+int status = 0;
+
+void cellLaunch(char ** args) {
+    if (Fork() == 0) {
+        Execvp(args[0], args);
+    } else {
+        Wait(&status);
+    }
+}
 void cellExec(char **args) {
     int i;
     const char *curr;
@@ -17,7 +26,7 @@ void cellExec(char **args) {
         }
         ++i;
     }
-    //cellLaunch(args);
+    cellLaunch(args);
 }
 char ** cellSplitLine(char * line) {
     char **tokens;
@@ -65,21 +74,25 @@ int main(int ac, char **av) {
     char ** args;
     printbanner();
     //REPL -> Read Eval Print Loop
-    while((line = cellReadLine())) {
-        //get line
-        args = cellSplitLine(line);
+    while ((line = cellReadLine()))
+	{
 
-        // for (int i = 0; args[i]; ++i) {
-        //     printf("%s\n", args[i]);
-        // }
-        //get tokne
+		// 2) Tokens
+		args = cellSplitLine(line);	
 
-        //execs
+        //check if cd
+		// if (args[0] && !strcmp(args[0], "cd"))
+		// 	Chdir(args[1]);
 
-        //free
-        free(line);
-        free(args);
-    }
+        //execute
+		cellExec(args);
+
+		//Clean🧹
+		free(line);
+		free(args);
+	
+
+	}
     
     return EXIT_SUCCESS;
 }
