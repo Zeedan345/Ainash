@@ -20,6 +20,6 @@ int	cellEnv(char **args)
 	if (!environ)
 		return (1);
 	for (int i = 0; environ[i]; i++)
-		p("%s\n", environ[i]);
+		printf("%s\n", environ[i]);
 	return (0);
 }
