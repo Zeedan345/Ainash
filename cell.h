@@ -1,10 +1,14 @@
 #ifndef CELL_H
 #define CELL_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
+# include <unistd.h>
+# include <stdbool.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <errno.h>
+# include <string.h>
+# include <sys/wait.h>
+# include <sysexits.h>
 
 #define DEL "\n\t \v\f\r"
 
