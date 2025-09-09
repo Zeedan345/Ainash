@@ -161,7 +161,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Zeedan Khan**
 - 📧 Email: zfk4@msstate.edu
-- 💼 LinkedIn: [Your LinkedIn Profile]
+- 💼 LinkedIn: [[Your LinkedIn Profile]](https://www.linkedin.com/in/zeedan/)
 - 🐙 GitHub: [@Zeedan345](https://github.com/Zeedan345)
 
 ---
