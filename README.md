@@ -1,4 +1,6 @@
-# Ainash - AI-Powered Shell
+# Ainash - Systems Programming Shell
+
+**C | Linux API | Process Management**
 
 🤖 **An intelligent shell that translates natural language commands into executable shell commands using Google's Gemini API**
 
@@ -14,6 +16,12 @@
 - **Process Management**: Robust process forking and execution handling
 - **HTTP/JSON Integration**: Seamless API communication with Google Gemini
 - **Cross-Platform**: Compatible with Unix-like systems
+
+## 💻 Technical Implementation
+
+- Built a POSIX-compliant shell in C capable of parsing natural language into executable commands.
+- Implemented low-level process management using `fork()`, `exec()`, and `wait()` system calls.
+- Designed a custom REPL with built-in security validation to sanitize AI-generated shell commands before execution.
 
 ## 📋 Prerequisites
 
